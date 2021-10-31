@@ -49,7 +49,7 @@ public class FoodMenu implements Serializable {
             return "No items on the menu";
         } else {
             for(String key : productList.keySet()) {
-                System.out.println("(" + key + ") " + productList.get(key).showDescription());
+                System.out.println("(" + key + ") " + productList.get(key).showDescription() + " - " + productList.get(key).getPrice() + " lei");
             }
             System.out.println("\n");
         }

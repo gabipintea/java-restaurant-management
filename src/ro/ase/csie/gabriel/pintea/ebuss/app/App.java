@@ -18,7 +18,7 @@ import java.util.*;
 
 import static java.util.Objects.isNull;
 
-public class App {    
+public class App {
     public static HashMap<String, Waiter> waiters;
     public static Waiter loggedWaiter;
     public static FoodMenu foodMenu;

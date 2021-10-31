@@ -88,7 +88,7 @@ public class Order implements Serializable {
                 '}');
         System.out.println("Items ordered:");
         for(String key : products.keySet()) {
-            System.out.println(products.get(key) + "x " + productList.get(key).showDescription());
+            System.out.println(products.get(key) + "x " + productList.get(key).showDescription() + " - " + productList.get(key).getPrice() + " lei");
         }
         System.out.println("Total price: " + this.totalPrice);
         return isReady?"----------done-------------":"---------pending-----------";
@@ -104,7 +104,7 @@ public class Order implements Serializable {
                 '}');
         exportZ.WriteLine("Items ordered:");
         for(String key : products.keySet()) {
-            exportZ.WriteLine(products.get(key) + "x " + productList.get(key).showDescription());
+            exportZ.WriteLine(products.get(key) + "x " + productList.get(key).showDescription() + " - " + productList.get(key).getPrice() + " lei");
         }
         exportZ.WriteLine("Total price: " + this.totalPrice);
         exportZ.WriteLine(isReady?"----------done-------------":"---------pending-----------");

@@ -9,6 +9,8 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.util.Objects.isNull;
+
 public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -88,7 +90,11 @@ public class Order implements Serializable {
                 '}');
         System.out.println("Items ordered:");
         for(String key : products.keySet()) {
-            System.out.println(products.get(key) + "x " + productList.get(key).showDescription() + " - " + productList.get(key).getPrice() + " lei");
+            if(!isNull(products.get(key)) && !isNull(productList.get(key))) {
+                System.out.println(products.get(key) + "x " + productList.get(key).showDescription() + " - " + productList.get(key).getPrice() + " lei");
+            } else {
+                System.out.println("Unavailable item. Probably, it was removed.");
+            }
         }
         System.out.println("Total price: " + this.totalPrice);
         return isReady?"----------done-------------":"---------pending-----------";

@@ -72,7 +72,10 @@ public class App {
         menuStart();
     }
     public static void exit() {
-        if(!isNull(waiters) && !isNull(loggedWaiter) && !isNull(foodMenu) && !isNull(activeOrders)) {
+        if(!isNull(waiters) && !isNull(loggedWaiter) && !isNull(foodMenu)) {
+            if(isNull(activeOrders) || activeOrders.isEmpty()) {
+                activeOrders = new ArrayList<Order>();
+            }
             Restaurant restaurant = new Restaurant(waiters, loggedWaiter, foodMenu, activeOrders, Employee.noEmployees, Order.noOrders);
 
             ObjectOutputStream os = null;
